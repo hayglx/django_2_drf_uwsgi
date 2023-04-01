@@ -3,6 +3,11 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
+from django.shortcuts import render
+
+
+def hello(request):
+    return render(request, template_name='rest_framework/api.html')
 
 
 @api_view(['GET', 'POST'])
